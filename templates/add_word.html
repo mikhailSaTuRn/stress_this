@@ -6,7 +6,7 @@
 </head>
 <body>
 
-{% if r == 'success' %} Вы дадалі слова {% else %}{% endif %}
+{% if status == 'success' %} Вы дадалі слова {% else %}{% endif %}
 
 <form method="post" action="add_word">
     <label>Слова:</label>
@@ -15,11 +15,11 @@
     <input type="number" name="stress_idx"><br>
     <label>Прыклад ужывання:</label>
     <input type="text" name="example"><br>
-    <label>Карысны артыкул:</label>
-    <input type="text" name="article"><br>
+    <label>Карысны артыкул:</label><br>
+    <textarea name="article" cols="40" rows="3"></textarea></p>
     <input type="submit">
 
 </form><br>
-<a href="add_word">123</a>
+<a href="/">На галоўную</a>
 </body>
 </html>

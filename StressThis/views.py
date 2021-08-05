@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from StressThis.models import Words
 import random
 
@@ -17,12 +17,26 @@ def take_random_word():
     return word_data
 
 
-def index(request):
-    # ствараю слоўнік са складамі
+def take_a_quiz():
     work_dict = take_random_word()
     syllable_list = work_dict['word'].split('_')
     context = {'syllable_list': syllable_list, 'work_dict': work_dict}
 
+    return context
+
+
+def base_page():
+    menu_context = {'menu': [
+        {'title': 'main_page', 'link': '/'},
+        {'title': 'all words', 'link': '/articles'},
+        {'title': 'add new word', 'link': '/add_page?r=None'},
+               ]}
+    return menu_context
+
+def index(request):
+    # ствараю слоўнік са складамі
+    context = take_a_quiz()
+    context['menu_context'] = base_page()
     return render(request, "index.html", context)
 
 
@@ -35,14 +49,16 @@ def article(request, id):
                  'article': curr_word_data.article,
                  }
 
-    return render(request, 'article.html', word_data)
+    context = take_a_quiz()
+    context['word_data'] = word_data
+    context['menu_context'] = base_page()
+    return render(request, 'article.html', context)
 
 
 def result(request):
     id = request.GET['id']
     stress = request.GET['stress']
     curr_word_data = get_object_or_404(Words, id=id)
-    flag = True
     if int(stress) == int(curr_word_data.stress_idx):
         flag = True
     else:
@@ -54,19 +70,23 @@ def result(request):
                  'article': curr_word_data.article,
                  'flag': flag,
                  }
-    return render(request, "result.html", word_data)
+
+    context = take_a_quiz()
+    context['word_data'] = word_data
+    context['menu_context'] = base_page()
+    return render(request, "result.html", context)
 
 
 def add_word(request):
-    # word = request.POST['word']
-    # stress_idx = request.POST['stress_idx']
-    # example = request.POST['example']
-    # article = request.POST['article']
-    # words = Words(word=word, stress_idx=stress_idx, example=example, article=article)
-    # words.save()
-    return redirect('add_page?r=success')
+    word = request.POST['word']
+    stress_idx = request.POST['stress_idx']
+    example = request.POST['example']
+    article = request.POST['article']
+    words = Words(word=word, stress_idx=stress_idx, example=example, article=article)
+    words.save()
+    return HttpResponseRedirect('add_page?r=success')
 
 
 def add_new_word(request):
-    text1 = request.GET['r']
-    return render(request, "add_word.html", {'text1': text1})
+    status = request.GET['r']
+    return render(request, "add_word.html", {'status': status})

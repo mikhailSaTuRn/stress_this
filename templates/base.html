@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Націск</title>
+    <style>
+        a {
+            color: black;
+            cursor: default;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: green;
+            cursor: default;
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+
+<ul>
+
+{% for menu_item in menu_context.menu %}
+    <li><a href="{{ menu_item.link }}">{{ menu_item.title }}</a></li>
+    {% endfor %}
+</ul>
+
+{% block content %} {% endblock %}
+
+
+
+</body>
+</html>

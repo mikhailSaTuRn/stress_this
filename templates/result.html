@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
 {% if flag == True %} Ты малайчына! {% else %} Глядзі як трэба: {% endif %}
 
 <br>
-{{ word }}<br>
-<a href="/">На галоўную</a>
+{{ word_data.word }}<br>
+<br>
 
-</body>
-</html>
+{% for syllable in syllable_list %}
+    <a href="{% if forloop.counter == work_dict.stress_idx %} /result?id={{ work_dict.id }}&stress={{ work_dict.stress_idx }}{% else %} /result?id={{ work_dict.id }}&stress={{ forloop.counter }} {% endif %}">{{ syllable }}</a>
+{% endfor %}
+
+{% endblock %}
