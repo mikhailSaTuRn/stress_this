@@ -1,0 +1,78 @@
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+.word a {
+    color: black;
+    cursor: default;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.word a:hover {
+    color: green;
+    cursor: default;
+    font-size: 150%;
+}
+
+body {
+    max-width: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    background-color: white; /*Default bg, similar to the background's base color*/
+    background-image: url('../images/bg.png');
+    background-position: right bottom; /*Positioning*/
+    background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}
+
+.logo {
+    color: white;
+    text-align: center;
+    font-size: 17px;
+}
+
+.logo_color {
+    color: red;
+}
+
+.topnav {
+    display: flex;
+    flex-direction: row;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.tab_flex a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.tab_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab_flex_space_between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.winner {
+    color: green;
+}
