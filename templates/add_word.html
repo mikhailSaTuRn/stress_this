@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 {% if status == 'success' %} Вы дадалі слова {% else %}{% endif %}
 
@@ -21,5 +17,4 @@
 
 </form><br>
 <a href="/">На галоўную</a>
-</body>
-</html>
+{% endblock %}

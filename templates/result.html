@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if flag == True %} Ты малайчына! {% else %} Глядзі як трэба: {% endif %}
+{% if word_data.flag == True %} <p class="winner">Ты малайчына!</p> {% else %} Глядзі як трэба: {% endif %}
 
 <br>
 {{ word_data.word }}<br>
