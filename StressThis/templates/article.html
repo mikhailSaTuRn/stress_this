@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="article">
+        <div class="article-word">
+            {% spaceless %}
+            {% for syll in syll_list %}
+                {% if forloop.counter == word_data.stress_idx %}<span class="text_color_red">{{ syll }}</span>{% else %}<span>{{ syll }}</span>{% endif %}
+            {% endfor %}
+            {% endspaceless %}
+        </div>
+    <div class="article-example"><i>Прыклад ужывання:</i><br> {{ word_data.example }}</div><br>
+    <div class="article-article"><i>Дадатковая інфармацыя:</i><br> {{ word_data.article }}</div><br>
+    </div>
+<br>
+{% endblock %}

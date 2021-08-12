@@ -19,9 +19,11 @@ from StressThis.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index, name='home'),
     path('<int:id>/', article, name='article'),
     path('result', result),
     path('add_word', add_word),
-    path('add_page', add_new_word)
+    path('add_page', add_new_word, name='add_page'),
+    path('articles', articles_view, name='articles'),
+    path('contact', index),
 ]

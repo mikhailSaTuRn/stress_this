@@ -1,0 +1,189 @@
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+.text_info {
+    color: #b3b3b3;
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+
+.form_add_word {
+    margin: auto;
+    width: 50%;
+    border: 3px solid gray;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+input[type=text], input[type=number], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+input[type=text]:focus, input[type=number]:focus, textarea:focus {
+    border: 3px solid #555;
+}
+
+input[type=submit] {
+    background-color: grey;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%
+}
+
+input[type=submit]:hover {
+    background-color: #555;
+}
+
+.ask {
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+}
+
+.word {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid gray;
+    padding: 10px;
+}
+
+.word a {
+    color: black;
+    cursor: default;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.word a:hover {
+    color: green;
+    cursor: default;
+    font-size: 150%;
+}
+
+body {
+    max-width: 800px;
+    height: calc(100vh - 70px);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    background: #999;
+}
+
+.main_sec {
+    padding: 0 20px 0;
+    height: 100%;
+    background-color: white; /*Default bg, similar to the background's base color*/
+    background-image: url('../images/bg.png');
+    background-position: right bottom; /*Positioning*/
+    background-repeat: no-repeat; /*Prevent showing multiple background images*/
+    background-size: 300px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    text-align: center;
+    font-size: 37px;
+}
+
+.text_color_red {
+    color: red;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 25px 18px;
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.menu_item {
+    padding: 25px 18px;
+}
+
+.menu_item:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.winner {
+    margin: 0 0 20px;
+    color: green;
+    text-align: center;
+    border: 3px solid green;
+    border-radius: 4px;
+    padding: 10px 10px 10px;
+    font-size: 20px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.library_list {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.library_list a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.article {
+    padding: 10px 10px 10px;
+}
+
+.article-word {
+    text-align: center;
+    margin: auto;
+    font-size: 27px;
+}
+
+.article-example {
+    text-align: center;
+    margin: 15px auto;
+    font-size: 20px;
+}
+
+.article-article {
+    text-align: center;
+    margin: 15px auto;
+}

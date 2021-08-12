@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+
+    {% if status == 'success' %}<div class="winner">Вы дадалі слова!</div>{% else %}{% endif %}
+
+<form method="post" action="add_word" class="form_add_word">
+    <label for="word">Слова</label>
+    <input type="text" id="word" name="word"><br>
+    <p class="text_info"> Калі ласка, склады размяжоўвайце "_". Напрыклад, "вы_па_дак".</p>
+    <label for="stress_idx">Нумар націснога склада</label>
+    <input type="number" id="stress_idx" name="stress_idx"><br>
+    <p class="text_info">Калі націск на другі склад, то пішам 2.</p>
+    <label for="example">Сказ з прыкладам ужывання</label>
+    <input type="text" id="example" name="example"><br>
+    <p class="text_info">Узгадкі ў літаратуры ці ў рэальным жыцці.</p>
+    <label for="article">Карысны артыкул</label><br>
+    <textarea id="article" name="article" cols="40" rows="3"></textarea></p>
+    <p class="text_info">Артыкул, які тлумачыць пазіцыю націску</p>
+    <input type="submit" value="Прапанаваць слова">
+    <p class="text_info"></p>
+</form><br>
+
+{% endblock %}
