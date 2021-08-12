@@ -38,9 +38,10 @@ def article(request, id):
                  'example': curr_word_data.example,
                  'article': curr_word_data.article,
                  }
-
+    syllable_list = word_data['word'].split('_')
     context = take_a_quiz()
     context['word_data'] = word_data
+    context['syll_list'] = syllable_list
     return render(request, 'article.html', context)
 
 
@@ -60,8 +61,10 @@ def result(request):
                  'flag': flag,
                  }
 
+    syllable_list = word_data['word'].split('_')
     context = take_a_quiz()
     context['word_data'] = word_data
+    context['syll_list'] = syllable_list
     return render(request, "result.html", context)
 
 
@@ -80,5 +83,4 @@ def add_new_word(request):
     return render(request, "add_word.html", {'status': status})
 
 def articles_view(request):
-    number_of_words = len(Words.objects.all())
-    return render(request, "dictonary.html", {"range": range(1, number_of_words + 1), 'words': Words.objects.all()})
+    return render(request, "dictonary.html", {'words': Words.objects.all()})
