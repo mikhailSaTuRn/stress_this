@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    {% if word_data.flag == True %} <p class="winner">Ты малайчына!</p> {% else %} <p class="article-example">Глядзі як трэба:</p> {% endif %}
+
+<br>
+        <div class="article-word">
+            {% spaceless %}
+            {% for syll in syll_list %}
+                {% if forloop.counter == word_data.stress_idx %}<span class="text_color_red">{{ syll }}</span>{% else %}<span>{{ syll }}</span>{% endif %}
+            {% endfor %}
+            {% endspaceless %}
+        </div>
+<br>
+
+
+{% endblock %}

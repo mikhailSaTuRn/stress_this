@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="library_list">
+    {% for nword in words %}
+        <a href="/{{ forloop.counter }}">{{ nword.word }}</a><br><br>
+    {% endfor %}
+</div>
+{% endblock %}

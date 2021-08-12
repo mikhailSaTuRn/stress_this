@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Націск</title>
+    <link rel="stylesheet" href="/static/css/mystyle.css?{% now "U" %}">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="navbar">
+        <a href="/articles" class="menu_item">Праглядзець усе словы<span class="text_color_red">.all()</span></a>
+        <a href="/"><p class="logo">Н<span class="text_color_red">á</span>ціск<span class="text_info">beta</span></p></a>
+        <a href="/add_page?r=None" class="menu_item"><p><span class="text_color_red">+</span> Прапанаваць слова</p></a>
+    </div>
+</header>
+
+<div class="main_sec">
+{% block content %} {% endblock %}
+</div>
+
+</body>
+</html>

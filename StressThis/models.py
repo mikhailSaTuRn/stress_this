@@ -8,3 +8,5 @@ class Words(models.Model):
     example = models.TextField(default="*калі будзе што, то дадам*")
     article = models.TextField(default="*калі будзе што, то дадам*")
 
+
+
