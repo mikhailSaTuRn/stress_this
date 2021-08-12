@@ -55,7 +55,7 @@ ROOT_URLCONF = 'stress_this.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'StressThis/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

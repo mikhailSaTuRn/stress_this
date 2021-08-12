@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for number in range %}
+        <a href="/{{ forloop.counter }}">WORD</a>
+    {% endfor %}
+{% endblock %}

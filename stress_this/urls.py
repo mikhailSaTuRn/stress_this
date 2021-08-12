@@ -24,6 +24,6 @@ urlpatterns = [
     path('result', result),
     path('add_word', add_word),
     path('add_page', add_new_word, name='add_page'),
-    path('articles', index, name='articles'),
+    path('articles', articles_view, name='articles'),
     path('contact', index),
 ]

@@ -90,3 +90,7 @@ def add_word(request):
 def add_new_word(request):
     status = request.GET['r']
     return render(request, "add_word.html", {'status': status})
+
+def articles_view(request):
+    number_of_words = len(Words.objects.all())
+    return render(request, "dictonary.html", {"range": range(1, number_of_words + 1), })

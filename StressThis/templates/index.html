@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>Выбярыце націсны склад: </div><br>
-
+<div class="ask">Выбярыце націскны склад: </div><br>
+<div class="word center">
 {% for syllable in syllable_list %}
     <a href="{% if forloop.counter == work_dict.stress_idx %} /result?id={{ work_dict.id }}&stress={{ work_dict.stress_idx }}{% else %} /result?id={{ work_dict.id }}&stress={{ forloop.counter }} {% endif %}">{{ syllable }}</a>
 {% endfor %}
-
+</div>
 <br>
 
 {% endblock %}
