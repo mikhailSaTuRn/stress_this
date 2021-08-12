@@ -2,7 +2,8 @@
 
 {% block content %}
 <br>
-{% if status == 'success' %} Вы дадалі слова {% else %}{% endif %}
+
+    {% if status == 'success' %}<div class="winner">Вы дадалі слова!</div>{% else %}{% endif %}
 
 <form method="post" action="add_word" class="form_add_word">
     <label for="word">Слова</label>

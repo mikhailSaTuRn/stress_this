@@ -8,6 +8,7 @@
 .text_info {
     color: #b3b3b3;
     margin: 0 0 12px;
+    font-size: 14px;
 }
 
 .form_add_word {
@@ -46,11 +47,13 @@ input[type=submit]:hover {
 }
 
 .ask {
+    text-align: center;
     font-size: 30px;
     margin: auto;
 }
 
 .word {
+    text-align: center;
     margin: auto;
     width: 50%;
     border: 3px solid gray;
@@ -79,6 +82,7 @@ body {
 }
 
 .main_sec {
+    padding: 0 20px 0;
     height: 100%;
     background-color: white; /*Default bg, similar to the background's base color*/
     background-image: url('../images/bg.png');
@@ -133,7 +137,12 @@ body {
 }
 
 .winner {
+    margin: 0 0 20px;
     color: green;
+    text-align: center;
+    border: 3px solid green;
+    border-radius: 4px;
+    padding: 10px 10px 10px;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
@@ -142,4 +151,17 @@ body {
         width: 100%;
         margin-top: 0;
     }
+}
+
+.library_list {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.library_list a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
 }

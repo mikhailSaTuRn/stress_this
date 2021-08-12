@@ -21,22 +21,12 @@ def take_a_quiz():
     work_dict = take_random_word()
     syllable_list = work_dict['word'].split('_')
     context = {'syllable_list': syllable_list, 'work_dict': work_dict}
-
     return context
 
-
-def base_page():
-    menu_context = {'menu': [
-        {'title': 'main_page', 'link': '/'},
-        {'title': 'all words', 'link': '/articles'},
-        {'title': 'add new word', 'link': '/add_page?r=None'},
-               ]}
-    return menu_context
 
 def index(request):
     # ствараю слоўнік са складамі
     context = take_a_quiz()
-    context['menu_context'] = base_page()
     return render(request, "index.html", context)
 
 
@@ -51,7 +41,6 @@ def article(request, id):
 
     context = take_a_quiz()
     context['word_data'] = word_data
-    context['menu_context'] = base_page()
     return render(request, 'article.html', context)
 
 
@@ -73,7 +62,6 @@ def result(request):
 
     context = take_a_quiz()
     context['word_data'] = word_data
-    context['menu_context'] = base_page()
     return render(request, "result.html", context)
 
 
@@ -93,4 +81,4 @@ def add_new_word(request):
 
 def articles_view(request):
     number_of_words = len(Words.objects.all())
-    return render(request, "dictonary.html", {"range": range(1, number_of_words + 1), })
+    return render(request, "dictonary.html", {"range": range(1, number_of_words + 1), 'words': Words.objects.all()})
